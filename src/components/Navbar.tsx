@@ -28,7 +28,7 @@ const Navbar = () => {
               <Code2 className="w-6 h-6 text-primary-foreground" />
             </div> */}
             <span className="text-xl font-bold text-blue-500">
-              C.N    
+              Coder.Next 
             </span>
           </Link>
 

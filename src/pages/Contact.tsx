@@ -148,7 +148,7 @@ const Contact = () => {
   const contactInfo = [
     { icon: Mail, title: "Email", value: "coder.next2@gmail.com", link: "mailto:coder.next2@gmail.com" },
     { icon: Phone, title: "Phone", value: "+91 9033786017", link: "tel:+919033786017" },
-    { icon: MapPin, title: "Office", value: "Surat, Gujarat, India", link: "https://maps.app.goo.gl/yqyZ4sZK1ZB5N6d66" },
+    { icon: MapPin, title: "Office", value: "INDIA", link: "https://maps.app.goo.gl/yqyZ4sZK1ZB5N6d66" },
   ];
 
   return (

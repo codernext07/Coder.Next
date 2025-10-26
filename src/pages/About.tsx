@@ -27,6 +27,21 @@ const About = () => {
     },
   ];
 
+  const teamMembers = [
+    {
+      name: "Ahmed Raza",
+      role: "Full Stack Developer",
+      description: "Turning ideas into high-performing digital solutions.",
+      image: "/assets/Member/AR.jpg",
+    },
+    {
+      name: "Juned Bhojani",
+      role: "Full Stack Developer",
+      description: "Designing intuitive and engaging user experiences.",
+      image: "/assets/Member/Juned.jpg",
+    },
+  ];
+
   return (
     <PageTransition>
       {/* Hero Section */}
@@ -42,58 +57,13 @@ const About = () => {
               About <span className="text-primary">Coder.Next</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground">
-              We're a team of passionate designers, developers, and strategists dedicated to creating 
+              We're a team of passionate designers, developers, and strategists dedicated to creating
               digital experiences that make a difference.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Story Section */}
-        {/* <section className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
-                <div className="space-y-4 text-muted-foreground">
-                  <p>
-                    Founded in 2019, Coder.Next started with a simple vision: to help businesses succeed 
-                    in the digital age through exceptional design and development.
-                  </p>
-                  <p>
-                    What began as a small team of three has grown into a diverse group of 15+ talented 
-                    professionals, each bringing unique expertise and perspective to every project.
-                  </p>
-                  <p>
-                    Today, we've completed over 100 projects for clients ranging from startups to 
-                    Fortune 500 companies, always maintaining our commitment to quality, innovation, 
-                    and client satisfaction.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="relative"
-              >
-                <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
-                  <div className="text-center text-primary-foreground p-8">
-                    <div className="text-6xl font-bold mb-4">5+</div>
-                    <div className="text-2xl">Years of Excellence</div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section> */}
 
       {/* Values Section */}
       <section className="py-20 bg-muted/30">
@@ -149,11 +119,31 @@ const About = () => {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
               A diverse group of talented individuals united by a passion for creating exceptional digital experiences
             </p>
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 text-primary font-medium">
-              <Users className="w-5 h-5" />
-              15+ Creative Professionals
-            </div>
           </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-center group"
+              >
+                <div className="w-40 h-40 mx-auto rounded overflow-hidden shadow-lg mb-4 border-2 border-primary/40 group-hover:border-primary transition-all duration-300">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold">{member.name}</h3>
+                <p className="text-primary font-medium">{member.role}</p>
+                <p className="text-muted-foreground mt-2 text-sm px-4">{member.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
     </PageTransition>
